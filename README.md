@@ -79,5 +79,5 @@ A: If you find something unreasonable, welcome to pull request!
 
 More questions see [issues](https://github.com/Freed-Wu/njustthesis/issues).
 
-  [cnlogo]: https://github.com/Freed-Wu/cnlogo
+  [cnlogo]: https://github.com/yuxtech/cnlogo
   [texlive]: https://github.com/TeX-Live/texlive-source
