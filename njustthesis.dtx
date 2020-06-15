@@ -137,7 +137,6 @@
   },
   associate-supervisor-title = {%
     name = associate@supervisor@title,
-    default = {教授},
   },
   judge-title = {%
     name = judge@title,
@@ -148,6 +147,16 @@
   },
   month = {%
     default = \the\month,
+  },
+  day = {%
+    default = \the\day,
+  },
+  signature = {%
+    default = \makebox[4em]{},
+  },
+  signature* = {%
+    name = signature@teacher,
+    default = \makebox[4em]{},
   },
   abstract-prefix = {%
     name = abstract@prefix,
@@ -179,6 +188,7 @@
   sub4section,
 ]{ctexbook}
 \ctexset{%
+  today = small,
   chapter = {%
     name = {},
     number = \arabic{chapter},
@@ -368,7 +378,7 @@
       \njust@cover@title
 
       \zihao{-1}
-      \vspace{2\ccwd}
+      \vspace{1\ccwd}
     \end{spacing}
 
     \begin{spacing}{1.5}
@@ -398,25 +408,25 @@
 
     \begin{spacing}{1}
       \zihao{3}
-      \vspace{3\ccwd}
+      \vspace{2\ccwd}
 
       \zihao{-3}
-      \textbf{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@supervisor\hspace{11em}\njust@supervisor@title}}
+      \textbf{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@supervisor\hspace{9em}\njust@supervisor@title}}
 
       \zihao{5}
-      \hspace{5em}（姓名）\hspace{11em}（专业技术职务）
+      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
 
       \zihao{-3}
-      　　　　\underline{\makebox[15.5\ccwd][c]{\njust@associate@supervisor\hspace{11em}\njust@associate@supervisor@title}}
+      \phantom{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@associate@supervisor\hspace{9em}\njust@associate@supervisor@title}}
 
       \zihao{5}
-      \hspace{5em}（姓名）\hspace{11em}（专业技术职务）
+      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
 
       \zihao{-3}
-      \textbf{评阅者：}\underline{\makebox[15.5\ccwd][c]{\njust@judge\hspace{11em}\njust@judge@title}}
+      \textbf{评阅者：}\underline{\makebox[15.5\ccwd][c]{\njust@judge\hspace{9em}\njust@judge@title}}
 
       \zihao{5}
-      \hspace{5em}（姓名）\hspace{11em}（专业技术职务）
+      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
 
       \zihao{3}
       \vspace{1\ccwd}
@@ -438,36 +448,36 @@
   \begin{spacing}{1.5}
     \zihao{4}
 
-    我声明，本\njust@cover@title 及其研究工作和所取得的成果是本人在导师的指导
+    我声明，本\njust@abstract@prefix 及其研究工作和所取得的成果是本人在导师的指导
     下独立完成的。研究过程中利用的所有资料均已在参考文献中列出，其他人员或机
-    构对本\njust@cover@title 工作做出的贡献也已在致谢部分说明。
+    构对本\njust@abstract@prefix 工作做出的贡献也已在致谢部分说明。
 
-    本\njust@cover@title 不涉及任何秘密，南京理工大学有权保存其电子和纸质文档
+    本\njust@abstract@prefix 不涉及任何秘密，南京理工大学有权保存其电子和纸质文档
     ，可以借阅或网上公布其部分或全部内容，可以向有关部门或机构送交并授权保存
     、借阅或网上公布其部分或全部内容。
 
     \vspace{2\ccwd}
 
     \begin{flushright}
-      学生签名：\hspace{8em}
+      学生签名：\njust@signature
 
       \vspace{1\ccwd}
 
-      年\hspace{3em}月\hspace{3em}日
+      \njust@year 年\njust@month 月\njust@day 日
 
       \vspace{2\ccwd}
 
-      指导教师签名：\hspace{8em}
+      指导教师签名：\njust@signature@teacher
 
       \vspace{1\ccwd}
 
-      年\hspace{3em}月\hspace{3em}日
+      \njust@year 年\njust@month 月\njust@day 日
     \end{flushright}
   \end{spacing}
   \clearpage
 }
 
-\newcommand\copyrightpageb{%
+\newcommand\reviewpage{%
   \begin{tabu}to.75\linewidth{@{}|X[l]|X[l]|@{}}
     \hline
     论文选题符合课程考核要求，具有一定的理论意义和实用价值,作者阅读较广泛,参考文献较充足。
@@ -542,7 +552,7 @@
   \newpage
   \thispagestyle{empty}
   \centering
-  \zihao{3}{\renewcommand{\CJKglue}{\hskip 2pt}\heiti\njust@abstract@prefix
+  \zihao{3}{\ziju{0.5}\heiti\njust@abstract@prefix
   中文摘要}
 
   \vspace{0.3em}
@@ -562,7 +572,7 @@
   \newpage
   \thispagestyle{empty}
   \centering
-  \zihao{3}\renewcommand{\CJKglue}{\hskip 2pt}\heiti\njust@abstract@prefix
+  \zihao{3}\ziju{0.5}\heiti\njust@abstract@prefix
   英文摘要
 
   \vspace{0.3em}
