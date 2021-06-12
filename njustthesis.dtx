@@ -288,14 +288,6 @@
   {\ding{201}}
 }
 \setfnsymbol{circled}
-% Fakesubsection link
-\RequirePackage{hyperref}
-\hypersetup{%
-  colorlinks = true,
-  linkcolor = gray!50!black,
-  citecolor = gray!50!black,
-  backref = page
-}
 % Fakesubsection reference
 \RequirePackage[
   square, comma, numbers, super, sort&compress, longnamesfirst, sectionbib,
@@ -308,6 +300,9 @@
 \graphicspath{%
   {fig/}
   {fig/\arabic{chapter}/}
+  {figures/}
+  {figures/\arabic{chapter}/}
+  {images/}
 }
 \RequirePackage[njust]{cnlogo}
 
@@ -350,7 +345,7 @@
 
 % Fakechapter command
 \renewcommand\maketitle{%
-  \newpage
+  \thispagestyle{empty}
   \begin{titlepage}
     \centering
     \begin{spacing}{1}
@@ -401,25 +396,17 @@
       \vspace{1\ccwd}
 
       \zihao{-3}
-      \textbf{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@supervisor\hspace{9em}\njust@supervisor@title}}
+      \textbf{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@supervisor\hspace{1em}\njust@supervisor@title}}
 
-      \zihao{5}
-      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
+      \hspace{5em}
 
-      \zihao{-3}
-      \phantom{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@associate@supervisor\hspace{9em}\njust@associate@supervisor@title}}
+      \phantom{指导者：}\underline{\makebox[15.5\ccwd][c]{\njust@associate@supervisor\hspace{1em}\njust@associate@supervisor@title}}
 
-      \zihao{5}
-      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
+      \hspace{5em}
 
-      \zihao{-3}
-      \textbf{评阅者：}\underline{\makebox[15.5\ccwd][c]{\njust@judge\hspace{9em}\njust@judge@title}}
+      \textbf{评阅者：}\underline{\makebox[15.5\ccwd][c]{\njust@judge\hspace{1em}\njust@judge@title}}
 
-      \zihao{5}
-      \hspace{5em}（姓名）\hspace{9em}（专业技术职务）
-
-      \zihao{3}
-      \vspace{1\ccwd}
+      \hspace{5em}
 
       \zihao{-2}
       \njust@year 年\njust@month 月
@@ -607,7 +594,6 @@
 
 \newenvironment{acknowledgement}{%
   \newpage
-  \thispagestyle{empty}
   \begin{center}
     \zihao{3}致谢
   \end{center}

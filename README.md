@@ -1,56 +1,38 @@
-njustthesis
-===========
+# njustthesis
 
-A template for NJUST thesis.
+A template for [NJUST](https://njust.edu.cn) thesis.
 
-Dependent
----------
+**Warning**: not maintained!
 
-1. A LaTex distribution. Such as [texlive].
-2. [cnlogo]: provide Chinese university logos. Include the logo of Nanjing
-    University of Science and Technology.
+## Dependent
 
-Compile
--------
+### Required
 
-```shell
-git clone git@github.com:Freed-Wu/njustthesis.git
+1.  A `LaTex` distribution. Such as
+    [texlive](https://github.com/TeX-Live/texlive-source).
+
+# Optional
+
+1.  University of Science and Technology. Or you download logo.pdf from
+    `<images/>`, then put it to `/path_which_contains_your_main.tex`.
+
+## Install
+
+``` shell
 latexmk -pvc- njustthesis/njustthesis.ins
 ```
 
-You will get a file named `njustthesis.cls`.
+You will get `njustthesis.cls`. Then:
 
-If you don't wanna install the package, make sure `njustthesis.cls` and your
-`main.tex` in a same path in order to latex engine can find it.
+-   Move it to `/path_which_contains_your_main.tex` and `texhash` to
+    update cache to use it temporarily.
+-   `/path_of_TexDirectoryStructure/tex/latex` to use it permanently.
 
-Install
--------
-
-Move `njustthesis.cls` in the path of your tex distribution store its
-packages, and update.
-
-And make sure you have installed `cnlogo`.
-
-### GNU
-
-```shell
-mv njustthesis.cls ~/.texlive/texmf-var/tex/latex
-texhash ~/.texlive/texmf-var
-```
-
-### Windows
-
-```shell
-move njustthesis.cls C:\Program Files\texlive\texmf-local\tex\latex
-texhash
-```
-
-Customize
----------
+## Customize
 
 Default values:
 
-``` {.tex}
+``` latex
 \njustsetup{
   logo = \njustwhole[njust][0.5], % depend on cnlogo
   cover-title = 毕业设计说明书,
@@ -79,14 +61,11 @@ Default values:
 }
 ```
 
-**Note**: Add curly brace around the string which contain ' ', '=', and ','.
+**Note**: Add `{}` around the string which contain ' ','=', and','.
 
-Usage
------
+Example:
 
-Examples:
-
-```latex
+``` latex
 \documentclass{njustthesis}
 \njustsetup{%
   author = 张不三,
@@ -98,7 +77,7 @@ Examples:
   supervisor = ,
   supervisor-title = 教授,
   judge = ,
-  % signature = \includegraphics{signature}, % if you have signature.pdf
+  % signature = \includegraphics{signature.pdf},
   judge-title = 教授,
 }
 \usepackage{subfiles}
@@ -111,34 +90,42 @@ Examples:
 \listoffigures
 \listoftables
 
-\mainmatter% body
-% \subfile{subfiles/chapter1.tex} % make sure subfiles/chapter1.tex exist
+\mainmatter%
+% \subfile{subfiles/chapter1.tex}
 
 \backmatter%
-% \bibliography{refer.bib} % if you have references, you can export bib file
-% from google scholar, etc.
+% \bibliography{refs/main.bib}
+
+\appendix
+% \subfile{subfiles/appendix1.tex}
 
 \end{document}
 ```
 
-More examples can see my homework.
-All my homework are write with this package.
+See more [examples](https://github.com/Freed-Wu?tab=repositories).
 
-## Todo ##
+## Todo
 
-Support [pandoc](https://github.com/jgm/pandoc).
+-   \[\] [pandoc](https://github.com/jgm/pandoc) template for user can
+    write markdown then convert it to latex.
+-   \[\] Change format from `ctexbook` to `ctexart` in order to use
+    `beamerarticle.sty` more conveniently.
 
-## Q & A ##
+## FAQ
 
 Q: Why another wheel?
 
-A: Because former wheels are too old to maintain.
+A: Because former wheels cannot satisfy me. Some even only provide a
+`*.tex` not `*.cls`.
 
 Q: 100% compatible with official `docx` template?
 
 A: If you find something unreasonable, welcome to pull request!
 
-More questions see [issues](https://github.com/Freed-Wu/njustthesis/issues).
+More questions see \[issues\].
 
-  [cnlogo]: https://github.com/yuxtech/cnlogo
-  [texlive]: https://github.com/TeX-Live/texlive-source
+## Reference
+
+-   [thuthesis](https://github.com/tuna/thuthesis) Maybe the best thesis
+    template of China. Any one can learn something from it. Such as
+    literate programming, separation of content and presentation, etc.
