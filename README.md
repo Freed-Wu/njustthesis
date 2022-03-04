@@ -1,38 +1,40 @@
 # njustthesis
 
-A template for [NJUST](https://njust.edu.cn) thesis.
-
-**Warning**: not maintained!
+Thesis template for [NJUST](https://njust.edu.cn).
 
 ## Dependent
 
 ### Required
 
-1.  A `LaTex` distribution. Such as
-    [texlive](https://github.com/TeX-Live/texlive-source).
+- A `LaTex` distribution. Such as
+  [texlive](https://github.com/TeX-Live/texlive-source).
 
-# Optional
+### Optional
 
-1.  University of Science and Technology. Or you download logo.pdf from
-    `<images/>`, then put it to `/path_which_contains_your_main.tex`.
+- University of Science and Technology. Or you download logo.pdf from
+  `<images/>`, then put it to any path tex can find.
 
 ## Install
 
-``` shell
-latexmk -pvc- njustthesis/njustthesis.ins
+### Use Package Manager
+
+```shell
+tlmgr install njustthesis
 ```
 
-You will get `njustthesis.cls`. Then:
+### Install From Source Code
 
--   Move it to `/path_which_contains_your_main.tex` and `texhash` to
-    update cache to use it temporarily.
--   `/path_of_TexDirectoryStructure/tex/latex` to use it permanently.
+Before building, [cnlogo](https://github.com/yuxtech/cnlogo/) must be installed.
+
+```shell
+l3build install
+```
 
 ## Customize
 
 Default values:
 
-``` latex
+```latex
 \njustsetup{
   logo = \njustwhole[njust][0.5], % depend on cnlogo
   cover-title = 毕业设计说明书,
@@ -65,7 +67,7 @@ Default values:
 
 Example:
 
-``` latex
+```latex
 \documentclass{njustthesis}
 \njustsetup{%
   author = 张不三,
@@ -102,30 +104,36 @@ Example:
 \end{document}
 ```
 
-See more [examples](https://github.com/Freed-Wu?tab=repositories).
+See more [examples](https://github.com/Freed-Wu?tab=repositories&q=njust&language=tex).
+
+## Tips
+
+```shell
+texdoc njusthesis
+```
 
 ## Todo
 
--   \[\] [pandoc](https://github.com/jgm/pandoc) template for user can
-    write markdown then convert it to latex.
--   \[\] Change format from `ctexbook` to `ctexart` in order to use
-    `beamerarticle.sty` more conveniently.
+- [pandoc](https://github.com/jgm/pandoc) template for user can
+  write markdown then convert it to latex.
+- Change format from `ctexbook` to `ctexart` in order to use
+  `beamerarticle.sty` more conveniently.
 
 ## FAQ
 
 Q: Why another wheel?
 
 A: Because former wheels cannot satisfy me. Some even only provide a
-`*.tex` not `*.cls`.
+`*.tex` not `*.cls`. So crude.
 
 Q: 100% compatible with official `docx` template?
 
 A: If you find something unreasonable, welcome to pull request!
 
-More questions see \[issues\].
+More questions see [issues](https://github.com/Freed-Wu/njustthesis/issues).
 
 ## Reference
 
--   [thuthesis](https://github.com/tuna/thuthesis) Maybe the best thesis
-    template of China. Any one can learn something from it. Such as
-    literate programming, separation of content and presentation, etc.
+- [thuthesis](https://github.com/tuna/thuthesis) May be the best thesis
+  template of China. Any one can learn something from it. Such as
+  literate programming, separation of content and presentation, etc.
