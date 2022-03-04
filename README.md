@@ -2,17 +2,18 @@
 
 Thesis template for [NJUST](https://njust.edu.cn).
 
+## License
+
+This work may be distributed and/or modified under the conditions of GPLv3+.
+
 ## Dependent
 
 ### Required
 
 - A `LaTex` distribution. Such as
   [texlive](https://github.com/TeX-Live/texlive-source).
-
-### Optional
-
-- University of Science and Technology. Or you download logo.pdf from
-  `<images/>`, then put it to any path tex can find.
+- [cnlogo](https://github.com/yuxtech/cnlogo/) provides the logos of many
+  Chinese Universities.
 
 ## Install
 
@@ -23,8 +24,6 @@ tlmgr install njustthesis
 ```
 
 ### Install From Source Code
-
-Before building, [cnlogo](https://github.com/yuxtech/cnlogo/) must be installed.
 
 ```shell
 l3build install
@@ -135,5 +134,5 @@ More questions see [issues](https://github.com/Freed-Wu/njustthesis/issues).
 ## Reference
 
 - [thuthesis](https://github.com/tuna/thuthesis) May be the best thesis
-  template of China. Any one can learn something from it. Such as
-  literate programming, separation of content and presentation, etc.
+  template among all Chinese theses. Any one can learn something from it. Such
+  as literate programming, separation of content and presentation, etc.

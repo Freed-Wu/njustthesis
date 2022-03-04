@@ -6,14 +6,14 @@ tagfiles = {"*.dtx", "build.lua"}
 typesetexe = "xelatex"
 typesetopts = "-shell-escape -file-line-error -halt-on-error -interaction=nonstopmode"
 uploadconfig = {
-  announcement = "https://github.com/Freed-Wu/njustthesis/releases",
-  author = "wzy",
+  announcement = "Release the package.",
+  author = "Wu Zhenyu",
   ctanPath = "/macros/latex/contrib/njustthesis",
   email = "wuzy01@qq.com",
   license = "gpl3+",
-  pkg = "njustthesis0",
-  summary = "Thesis template for NJUST",
-  uploader = "wzy",
+  pkg = "njustthesis",
+  summary = "Thesis template for Nanjing University of Science and Technology.",
+  uploader = "Wu Zhenyu",
   version = "2022-03-04 0.0.1",
 
   bugtracker = "https://github.com/Freed-Wu/njustthesis/issues",
