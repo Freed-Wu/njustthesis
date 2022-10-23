@@ -1,138 +1,59 @@
 # njustthesis
 
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/njustthesis/master.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/njustthesis/master)
+[![github/workflow](https://github.com/Freed-Wu/njustthesis/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/njustthesis/actions)
+
+[![github/downloads](https://shields.io/github/downloads/Freed-Wu/njustthesis/total)](https://github.com/Freed-Wu/njustthesis/releases)
+[![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/njustthesis/latest/total)](https://github.com/Freed-Wu/njustthesis/releases/latest)
+[![github/issues](https://shields.io/github/issues/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/issues)
+[![github/issues-closed](https://shields.io/github/issues-closed/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/issues?q=is%3Aissue+is%3Aclosed)
+[![github/issues-pr](https://shields.io/github/issues-pr/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/pulls)
+[![github/issues-pr-closed](https://shields.io/github/issues-pr-closed/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/pulls?q=is%3Apr+is%3Aclosed)
+[![github/discussions](https://shields.io/github/discussions/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/discussions)
+[![github/milestones](https://shields.io/github/milestones/all/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/milestones)
+[![github/forks](https://shields.io/github/forks/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/network/members)
+[![github/stars](https://shields.io/github/stars/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/stargazers)
+[![github/watchers](https://shields.io/github/watchers/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/watchers)
+[![github/contributors](https://shields.io/github/contributors/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/graphs/contributors)
+[![github/commit-activity](https://shields.io/github/commit-activity/w/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/graphs/commit-activity)
+[![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/commits)
+[![github/release-date](https://shields.io/github/release-date/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/releases/latest)
+
+[![github/license](https://shields.io/github/license/Freed-Wu/njustthesis)](https://github.com/Freed-Wu/njustthesis/blob/master/LICENSE)
+![github/languages](https://shields.io/github/languages/count/Freed-Wu/njustthesis)
+![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/njustthesis)
+![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/njustthesis)
+![github/code-size](https://shields.io/github/languages/code-size/Freed-Wu/njustthesis)
+![github/repo-size](https://shields.io/github/repo-size/Freed-Wu/njustthesis)
+![github/v](https://shields.io/github/v/release/Freed-Wu/njustthesis)
+
 Thesis template for [NJUST](https://njust.edu.cn).
 
-## License
+<!-- mdformat-toc start --slug=github --no-anchors --maxlevel=6 --minlevel=2 -->
 
-This work may be distributed and/or modified under the conditions of GPLv3+.
+- [Install](#install)
+  - [Use Package Manager](#use-package-manager)
+  - [Install From Source Code](#install-from-source-code)
+- [Usage](#usage)
 
-## Dependent
-
-### Required
-
-- A `LaTex` distribution. Such as
-  [texlive](https://github.com/TeX-Live/texlive-source).
-- [cnlogo](https://github.com/yuxtech/cnlogo/) provides the logos of many
-  Chinese Universities.
+<!-- mdformat-toc end -->
 
 ## Install
 
 ### Use Package Manager
 
-```shell
+```sh
 tlmgr install njustthesis
 ```
 
 ### Install From Source Code
 
-```shell
+```sh
+git clone --depth=1 https://github.com/Freed-Wu/njustthesis
+cd njustthesis
 l3build install
 ```
 
-## Customize
+## Usage
 
-Default values:
-
-```latex
-\njustsetup{
-  logo = \njustwhole[njust][0.5], % depend on cnlogo
-  cover-title = 毕业设计说明书,
-  author = 佚名,
-  id = 916101630000,
-  department = 电子工程与光电技术学院,
-  discipline = 电子工程与光电技术,
-  title = ,
-  subtitle = ,
-  supervisor = 张三,
-  associate-supervisor = 李四,
-  judge = 王五,
-  supervisor-title = 教授,
-  associate-supervisor-title = 教授,
-  judge-title = 教授,
-  year = \the\year, % the time of paper
-  month = \the\month,
-  day = \the\day,
-  abstract-prefix = 毕业论文,
-  signature = ,
-  signature* = , % star means english
-  abstract-prefix = 毕业论文,
-  title* = ,
-  subtitle* = ,
-  header-title = 本科毕业设计说明书,
-}
-```
-
-**Note**: Add `{}` around the string which contain ' ','=', and','.
-
-Example:
-
-```latex
-\documentclass{njustthesis}
-\njustsetup{%
-  author = 张不三,
-  id = 916101630000,
-  discipline = 电子信息工程,
-  title = {论文名字带逗号,或空格 },
-  subtitle = 所以加花括弧括起来,
-  title* = {English name},
-  supervisor = ,
-  supervisor-title = 教授,
-  judge = ,
-  % signature = \includegraphics{signature.pdf},
-  judge-title = 教授,
-}
-\usepackage{subfiles}
-\begin{document}
-
-\maketitle
-
-\frontmatter
-\tableofcontents
-\listoffigures
-\listoftables
-
-\mainmatter%
-% \subfile{subfiles/chapter1.tex}
-
-\backmatter%
-% \bibliography{refs/main.bib}
-
-\appendix
-% \subfile{subfiles/appendix1.tex}
-
-\end{document}
-```
-
-See more [examples](https://github.com/Freed-Wu?tab=repositories&q=njust&language=tex).
-
-## Tips
-
-```shell
-texdoc njusthesis
-```
-
-## Todo
-
-- [pandoc](https://github.com/jgm/pandoc) template for user can
-  write markdown then convert it to latex.
-- Change format from `ctexbook` to `ctexart` in order to use
-  `beamerarticle.sty` more conveniently.
-
-## FAQ
-
-Q: Why another wheel?
-
-A: Because former wheels cannot satisfy me. Some even only provide a
-`*.tex` not `*.cls`. So crude.
-
-Q: 100% compatible with official `docx` template?
-
-A: If you find something unreasonable, welcome to pull request!
-
-More questions see [issues](https://github.com/Freed-Wu/njustthesis/issues).
-
-## Reference
-
-- [thuthesis](https://github.com/tuna/thuthesis) May be the best thesis
-  template among all Chinese theses. Any one can learn something from it. Such
-  as literate programming, separation of content and presentation, etc.
+See [config](docs/config.md).
