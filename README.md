@@ -34,6 +34,8 @@ Thesis template for [NJUST](https://njust.edu.cn).
 - [Install](#install)
   - [Use Package Manager](#use-package-manager)
   - [Install From Source Code](#install-from-source-code)
+  - [Install From Release](#install-from-release)
+  - [Ensure You Have Installed This Package Successfully](#ensure-you-have-installed-this-package-successfully)
 - [Usage](#usage)
 
 <!-- mdformat-toc end -->
@@ -52,6 +54,46 @@ tlmgr install njustthesis
 git clone --depth=1 https://github.com/Freed-Wu/njustthesis
 cd njustthesis
 l3build install
+```
+
+### Install From Release
+
+Download `njustthesis.tds.zip` from
+[Release](https://github.com/Freed-Wu/njustthesis/releases/latest).
+Then unzip it to correct path.
+
+```sh
+$ gh release list -RFreed-Wu/njustthesis
+0.0.1                   Latest  (0.0.1)   about 24 minutes ago
+...
+$ gh release download 0.0.1 -RFreed-Wu/njustthesis
+$ ls
+ njustthesis-ctan.zip   njustthesis.tds.zip
+$ kpsewhich --var-value TEXMFHOME
+/home/wzy/texmf
+$ mkdir -p $(kpsewhich --var-value TEXMFHOME)
+$ mv njustthesis.tds.zip $(kpsewhich --var-value TEXMFHOME)
+% unzip njustthesis.tds.zip
+Archive:  njustthesis.tds.zip
+inflating: doc/latex/njustthesis/README.md
+inflating: doc/latex/njustthesis/njustthesis.pdf
+inflating: tex/latex/njustthesis/njustthesis.cls
+inflating: source/latex/njustthesis/njustthesis.ins
+inflating: source/latex/njustthesis/njustthesis.dtx
+$ texhash
+texhash: /etc/texmf: directory not writable. Skipping...
+texhash: /usr/local/share/texmf: directory not writable. Skipping...
+texhash: /usr/share/texmf: directory not writable. Skipping...
+texhash: /usr/share/texmf-dist: directory not writable. Skipping...
+texhash: /var/lib/texmf: directory not writable. Skipping...
+texhash: Done.
+```
+
+### Ensure You Have Installed This Package Successfully
+
+```sh
+$ kpsewhere njustthesis.cls
+/home/wzy/texmf/tex/latex/njustthesis/njustthesis.cls
 ```
 
 ## Usage
