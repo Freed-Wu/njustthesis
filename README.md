@@ -73,7 +73,7 @@ $ kpsewhich --var-value TEXMFHOME
 /home/wzy/texmf
 $ mkdir -p $(kpsewhich --var-value TEXMFHOME)
 $ mv njustthesis.tds.zip $(kpsewhich --var-value TEXMFHOME)
-% unzip njustthesis.tds.zip
+$ unzip njustthesis.tds.zip
 Archive:  njustthesis.tds.zip
 inflating: doc/latex/njustthesis/README.md
 inflating: doc/latex/njustthesis/njustthesis.pdf
